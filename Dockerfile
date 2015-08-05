@@ -28,6 +28,24 @@ RUN bash mkdist.sh 1.5.0 && \
     chown www-data:www-data /var/log/apache2 && \
     a2ensite conpaas-director
 
+# adding AM packages
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get update && \
+    apt-get -y install \
+        python-httplib2 \
+        python-numpy \
+        python-simplejson \
+        python-paramiko \
+        python-pexpect\
+        python-sklearn \
+    python-scipy && \
+    rm -rf /var/lib/apt/lists/* /var/cache/apt/*
+
+ADD am /var/www/am/
+
+RUN git clone -b dev https://gitlab.harness-project.eu/Anca/applicationmanager.git \
+        /var/cache/docker/workdirs/applicationmanager
+
 # create startup scripts
 ADD conpaas-director.sh /etc/my_init.d/10-conpaas-director
 ADD php.ini /etc/php5/apache2/

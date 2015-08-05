@@ -1,0 +1,12 @@
+{
+  "SLO": {
+    "ManifestURL": "http://localhost/am/manifest.json",
+    "ExecutionArguments": [10],
+    "Objective": {
+      "Constraints": [
+        "%execution_time <= 1000"
+      ],
+      "Optimize": "cost"
+    }
+  }
+}

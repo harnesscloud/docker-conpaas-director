@@ -1,0 +1,58 @@
+{
+  "Name": "Sleep",
+  "Author": "User",
+  "Modules": [
+    {
+      "ModuleName": "Main",
+      "ModuleType": "generic",
+      "Online": 0,
+      "Parameters": [
+        {
+          "Var": "%arg1",
+          "Name": "input",
+          "Values": [ 10, 20 ]
+        }
+      ],
+      "Implementations": [
+        {
+          "ImplementationName": "Sleep1",
+          
+          "Resources": {
+            "Groups": [
+              {
+                "GroupID": "id0",
+                "Role": "MASTER",
+                "Type": "Machine",
+                "NumInstances": {
+                  "Value": 1
+                },
+                "Attributes": {
+                  "Memory": {
+                    "Var": "%master_mem",
+                    "Values": [
+                      512,
+                      1024
+                    ]
+                  },
+                  "Cores": {
+                    "Var": "%master_cores",
+                    "Range": [
+                      1,
+                      2 
+                    ]
+                  }
+                }
+              }
+            ],
+            "Distances": []
+          },
+          "GlobalConstraints": [],
+          "EnvironmentVars": {},
+          "Tarball": "http://10.1.0.101/am/test.tar.gz",
+          "DeploymentArgs": "",
+          "ExecutionArgs": "%arg1"
+        }
+      ]
+    }
+  ]
+}
