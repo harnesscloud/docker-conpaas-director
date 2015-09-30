@@ -40,7 +40,7 @@ RUN chmod 0755 /etc/my_init.d/10-conpaas-director
 
 # add insecure private key, for any future development we should generate a key
 # and push it through nova once irm-nova implements this functionality
-RUN mkdir -m 0700 /root/.ssh
+RUN mkdir -p -m 0700 /root/.ssh
 ADD harness_insecure-id_rsa /root/.ssh/id_rsa
 RUN chmod 0600 /root/.ssh/id_rsa
 ADD harness_insecure-id_rsa.pub /root/.ssh/authorized_keys
