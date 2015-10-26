@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/7696/harnesscloud/docker-conpaas-director.svg)](https://zenodo.org/badge/latestdoi/7696/harnesscloud/docker-conpaas-director)
+
 This folder contains the dockerfiles for creating the image for the ConPaaS
 container.
 
